@@ -1,0 +1,19 @@
+#pane{
+	-fx-background-image: url('paws.png');
+	-fx-background-repeat: stretch;   
+	-fx-background-size: 1110 350;
+	-fx-background-position: bottom right;
+}
+
+.BUTTON{
+	-fx-background-color: #b3ecff;
+	border-radius: 5px;
+}
+
+.BUTTON:hover{
+	-fx-background-color: #80dfff;
+}
+
+.BUTTON:pressed{
+	-fx-background-color: #4dd2ff;
+}

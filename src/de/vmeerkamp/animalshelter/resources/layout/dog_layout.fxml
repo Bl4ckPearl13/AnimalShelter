@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="pane"
+            maxHeight="948.0"
+            maxWidth="1280.0"
+            minHeight="948.0"
+            minWidth="1280.0"
+            prefHeight="948.0"
+            prefWidth="1280.0"
+            style="-fx-background-color: #ffffff"
+            stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.vmeerkamp.animalshelter.gui.DogController">
+	<children>
+		<VBox prefHeight="948.0"
+		      prefWidth="170.0"
+		      spacing="30.0"
+		      style="-fx-background-color: #b3ecff"
+		      AnchorPane.bottomAnchor="0.0"
+		      AnchorPane.leftAnchor="0.0"
+		      AnchorPane.topAnchor="0.0">
+			<children>
+				<Button fx:id="btnCatScene"
+				        mnemonicParsing="false"
+				        onAction="#switchToCatScene"
+				        prefHeight="40.0"
+				        prefWidth="120.0"
+				        text="Katzen">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Button>
+				<Button fx:id="btnDogScene"
+				        mnemonicParsing="false"
+				        onAction="#switchToDogScene"
+				        prefHeight="40.0"
+				        prefWidth="120.0"
+				        text="Hunde">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Button>
+				<Button fx:id="btnRabbitScene"
+				        mnemonicParsing="false"
+				        onAction="#switchToRabbitScene"
+				        prefHeight="40.0"
+				        prefWidth="120.0"
+				        text="Kaninchen">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Button>
+			</children>
+			<padding>
+				<Insets left="25.0"
+				        right="25.0"
+				        top="50.0"/>
+			</padding>
+		</VBox>
+		<VBox layoutX="200.0"
+		      layoutY="30.0"
+		      prefHeight="725.0"
+		      prefWidth="330.0"
+		      AnchorPane.leftAnchor="200.0"
+		      AnchorPane.rightAnchor="750.0"
+		      AnchorPane.topAnchor="30.0">
+			<children>
+				<Label text="Hunde">
+					<font>
+						<Font size="16.0"/>
+					</font>
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+				</Label>
+				<ListView fx:id="lvAnimal"
+				          prefHeight="695.0"
+				          prefWidth="330.0"/>
+			</children>
+		</VBox>
+		<VBox layoutX="485.0"
+		      layoutY="30.0"
+		      prefHeight="725.0"
+		      prefWidth="330.0"
+		      AnchorPane.leftAnchor="560.0"
+		      AnchorPane.rightAnchor="390.0">
+			<children>
+				<Label text="ID*">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<TextField fx:id="txtAnimalId"
+				           editable="false"
+				           layoutX="10.0"
+				           layoutY="95.0"
+				           promptText="(wird automatisch generiert)">
+					<font>
+						<Font size="16.0"/>
+					</font>
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+				</TextField>
+				<Label text="Name*">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<TextField fx:id="txtName"
+				           promptText="Name">
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</TextField>
+				<Label text="Geburtsdatum">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<TextField fx:id="txtDateOfBirth"
+				           promptText="TT.MM.JJJJ">
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</TextField>
+				<Label text="Geschlecht*">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<HBox prefHeight="37.0"
+				      prefWidth="330.0">
+					<children>
+						<ComboBox fx:id="cmbSex"
+						          prefHeight="37.0"
+						          prefWidth="330.0"
+						          style="-fx-font-size: 12pt"/>
+					</children>
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+				</HBox>
+				<CheckBox fx:id="chkNeutered"
+				          mnemonicParsing="false"
+				          text="Kastriert">
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</CheckBox>
+				<Label text="Rasse">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<TextField fx:id="txtBreed"
+				           promptText="Rasse">
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</TextField>
+				<Label text="Farbe">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<TextField fx:id="txtColour"
+				           promptText="Farbe">
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</TextField>
+				<Label text="Aufnahmedatum*">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<TextField fx:id="txtAdmissionDate"
+				           promptText="TT.MM.JJJJ">
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</TextField>
+				<Label text="Adoptionsdatum">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<TextField fx:id="txtAdoptionDate"
+				           promptText="TT.MM.JJJJ">
+					<VBox.margin>
+						<Insets bottom="15.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</TextField>
+				<CheckBox fx:id="chkRegulatedDogBreed"
+				          mnemonicParsing="false"
+				          text="Listenhund">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</CheckBox>
+				<Label alignment="TOP_RIGHT"
+				       prefWidth="330.0"
+				       text="* Pflichtfelder"/>
+			</children>
+		</VBox>
+		<VBox layoutX="924.0"
+		      layoutY="30.0"
+		      prefHeight="725.0"
+		      prefWidth="330.0"
+		      AnchorPane.leftAnchor="920.0"
+		      AnchorPane.rightAnchor="30.0">
+			<children>
+				<Label text="Beschreibung">
+					<VBox.margin>
+						<Insets bottom="5.0"/>
+					</VBox.margin>
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Label>
+				<TextArea fx:id="txtDescription"
+				          prefHeight="695.0"
+				          prefWidth="330.0"
+				          promptText="Beschreibung"
+				          wrapText="true">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</TextArea>
+			</children>
+		</VBox>
+		<VBox alignment="TOP_CENTER"
+		      layoutX="170.0"
+		      layoutY="755.0"
+		      prefHeight="25.0"
+		      prefWidth="1110.0"
+		      AnchorPane.leftAnchor="170.0"
+		      AnchorPane.rightAnchor="0.0"
+		      AnchorPane.topAnchor="755.0">
+			<children>
+				<Label fx:id="lblUserMessage">
+					<font>
+						<Font name="System Bold"
+						      size="16.0"/>
+					</font>
+				</Label>
+			</children>
+		</VBox>
+		
+		<HBox alignment="CENTER"
+		      layoutX="170.0"
+		      layoutY="861.0"
+		      prefHeight="40.0"
+		      prefWidth="1112.0"
+		      spacing="50.0"
+		      AnchorPane.bottomAnchor="50.0"
+		      AnchorPane.leftAnchor="170.0"
+		      AnchorPane.rightAnchor="0.0">
+			<children>
+				<Button id="BUTTON"
+				        fx:id="btnSave"
+				        layoutX="232.0"
+				        layoutY="709.0"
+				        mnemonicParsing="false"
+				        onAction="#save"
+				        prefHeight="40.0"
+				        prefWidth="150.0"
+				        styleClass="BUTTON"
+				        stylesheets="@style.css"
+				        text="Speichern">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Button>
+				<Button fx:id="btnEmptyFields"
+				        mnemonicParsing="false"
+				        onAction="#emptyInputFields"
+				        prefHeight="40.0"
+				        prefWidth="150.0"
+				        styleClass="BUTTON"
+				        stylesheets="@style.css"
+				        text="Felder leeren">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Button>
+				<Button fx:id="btnDelete"
+				        layoutX="666.0"
+				        layoutY="709.0"
+				        mnemonicParsing="false"
+				        onAction="#delete"
+				        prefHeight="40.0"
+				        prefWidth="150.0"
+				        styleClass="BUTTON"
+				        stylesheets="@style.css"
+				        text="Löschen">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Button>
+				<Button fx:id="btnExport"
+				        layoutX="888.0"
+				        layoutY="709.0"
+				        mnemonicParsing="false"
+				        onAction="#csvExport"
+				        prefHeight="40.0"
+				        prefWidth="150.0"
+				        styleClass="BUTTON"
+				        stylesheets="@style.css"
+				        text="Alle Exportieren">
+					<font>
+						<Font size="16.0"/>
+					</font>
+				</Button>
+			</children>
+		</HBox>
+	</children>
+</AnchorPane>
